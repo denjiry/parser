@@ -139,7 +139,7 @@ factor = do symbol "("
             e <- expr
             symbol ")"
             return e
-          <|> natural
+          <|> natural -- indent position is very important to avoid runtime-error
 
 eval :: String -> Int
 eval xs = case (parse expr xs) of
